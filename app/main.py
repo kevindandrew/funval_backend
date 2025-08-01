@@ -3,6 +3,24 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, productos, usuarios, ventas
 from app.database import engine, Base
 
+
+#    !!!!!!!! ATENCION NO TOCAR, FUNCIONA Y NO SE PORQUE !!!!!!!!!!
+
+#    ESTE FRAGMENTO DE CODIGO FUE ESCRITO ENTRE LAS 2 Y 3 DE LA MAÑANA
+#    BAJO LOS EFECTOS COMBINADOS DE LA CAFEINA, DESESPERACION Y UN BUG Q SOLO
+#    SE MANIFIESTA CUANDO NADIE LO ESTA MIRANDO.
+
+#    No funciona si lo entiendes
+#    No lo entiendes si funciona
+
+#    cualquier intento de refactorizar esto ha
+#    resultado en la invocacion de problemas dimensionales, loops infinitos
+#    y un extraño parpadeo en el monitor que aun no puedo explicar.
+
+#    si necesitas cambiar esto, primero haz una oracion, luego haz una copia de seguridad,
+#    y por ultimo suerte.
+
+
 # Crear las tablas en la base de datos
 Base.metadata.create_all(bind=engine)
 

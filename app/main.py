@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, productos, usuarios, ventas
 from app.database import engine, Base
 
@@ -11,6 +12,15 @@ app = FastAPI(
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
+)
+
+# Configurar CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permite todas las origenes
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite todos los métodos HTTP
+    allow_headers=["*"],  # Permite todos los headers
 )
 
 # Incluir los routers
